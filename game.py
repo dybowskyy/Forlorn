@@ -44,6 +44,8 @@ class Game:
                     key_map = {pygame.K_UP: 0, pygame.K_DOWN: 1, pygame.K_RIGHT: 2, pygame.K_LEFT: 3}
                     if event.key in key_map:
                         self.movement[key_map[event.key]] = key_state
+                    if event.key == pygame.K_UP:
+                        self.player.velocity[1] = -2
 
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
             pygame.display.update()
